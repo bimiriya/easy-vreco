@@ -1,33 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Easy Vreco</title>
+ 
   <link rel="stylesheet" href="node_modules/bootstrap3/dist/css/bootstrap.css">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
+
 <body>
   <nav>
     <div class="container">
       <div class="row">
-        <div class="col-lg-4">
-          <button class="btn btn-warning">Encuéntrame</button>
-        </div>
-        <div class="col-lg-5">
-          <input type="text" placeholder="Introduce una ubicación">
-          <input type="text" placeholder="Introduce una ubicación">
+        <div class="col-lg-3">
+          <button id="ubication" class="btn btn-warning" >Encuéntrame</button>
+          <select id="mode" class="form-control">
+            <option value="DRIVING">Driving</option>
+            <option value="WALKING">Walking</option>
+            <option value="BICYCLING">Bicycling</option>
+            <option value="TRANSIT">Transit</option>
+          </select>
         </div>
         <div class="col-lg-3">
-          <button class="btn btn-warning">Ruta</button>
+          <input type="text" id="origin" placeholder="Introduce una ubicación de origen" class="form-control">
+        </div>
+        <div class="col-lg-3">
+          <input type="text" id="destiny" placeholder="Introduce una ubicación de destino"  class="form-control">
+        </div>
+        <div class="col-lg-3">
+          <button class="btn btn-warning" id="btn-ruta">Ruta</button>
         </div>
       </div>
     </div>
   </nav>
+  <section>
+    <div class="row" >
+      <div class="col-lg-12" id="position">
 
-  <section></section>
-  
+      </div>
+    </div>
+    <div class="row" id="map">
+      <div class="col-lg-12">
+
+      </div>
+    </div>
+  </section>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQWhMfqOzklrgzumzlkcD0r5GVv0pXDDA&callback=initMap&libraries=places" async defer
+  type="text/javascript"></script>
   <link rel="stylesheet" href="node_modules/bootstrap3/dist/js/bootstrap.js">
+  <script src="assets/js/app.js"></script>
 </body>
+
 </html>
