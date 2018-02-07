@@ -1,4 +1,8 @@
-section {
+/* section {
     background: blue;
     height: 93vh;
-}
+} */
+#map {
+    height: 400px;
+    width: 100%;
+   }
