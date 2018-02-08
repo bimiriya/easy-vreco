@@ -11,7 +11,7 @@ function initMap() {
 
 
   let infoWindow = new google.maps.InfoWindow({ map: map });
-  
+
   let autocompleteA = document.getElementById('origin');
   const searchA = new google.maps.places.Autocomplete(autocompleteA);
   searchA.bindTo('bounds', map);
@@ -42,10 +42,10 @@ function initMap() {
           content: text
         });
 
-        marker.addListener('click', function() {
+        marker.addListener('click', function () {
           information.open(map, marker);
         });
-      }, function() {
+      }, function () {
         handleLocationError(true, infoWindow, map.getCenter());
       });
     } else {
@@ -77,7 +77,7 @@ function calculateAndDisplayRoute() {
     center: { lat: -33.4533624, lng: -70.7142131 }
   });
 
-  directionsService.route(objDR, function(response, status) {
+  directionsService.route(objDR, function (response, status) {
     if (status === 'OK') {
       directionsDisplay.setMap(map);
       directionsDisplay.setDirections(response);
@@ -87,10 +87,27 @@ function calculateAndDisplayRoute() {
   });
 }
 let removeOrigin = document.getElementById('remove-origin');
-removeOrigin.addEventListener('click', function() {
+removeOrigin.addEventListener('click', function () {
   document.getElementById('origin').value = '';
 });
 let removeDestiny = document.getElementById('remove-destiny');
-removeDestiny.addEventListener('click', function() {
+removeDestiny.addEventListener('click', function () {
   document.getElementById('destiny').value = '';
+});
+
+var granimInstance = new Granim({
+  element: '#canvas-basic',
+  name: 'basic-gradient',
+  direction: 'left-right', // 'diagonal', 'top-bottom', 'radial'
+  opacity: [1, 1],
+  isPausedWhenNotInView: true,
+  states: {
+    "default-state": {
+      gradients: [
+        ['#AA076B', '#61045F'],
+        ['#02AAB0', '#00CDAC'],
+        ['#DA22FF', '#9733EE']
+      ]
+    }
+  }
 });
