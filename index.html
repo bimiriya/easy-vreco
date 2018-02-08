@@ -6,50 +6,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Easy Vreco</title>
- 
+
   <link rel="stylesheet" href="node_modules/bootstrap3/dist/css/bootstrap.css">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body>
-  <nav>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3">
-          <button id="ubication" class="btn btn-warning" >Encuéntrame</button>
-          <select id="mode" class="form-control">
-            <option value="DRIVING">Driving</option>
-            <option value="WALKING">Walking</option>
-            <option value="BICYCLING">Bicycling</option>
-            <option value="TRANSIT">Transit</option>
-          </select>
-        </div>
-        <div class="col-lg-3">
-          <input type="text" id="origin" placeholder="Introduce una ubicación de origen" class="form-control">
-        </div>
-        <div class="col-lg-3">
-          <input type="text" id="destiny" placeholder="Introduce una ubicación de destino"  class="form-control">
-        </div>
-        <div class="col-lg-3">
-          <button class="btn btn-warning" id="btn-ruta">Ruta</button>
+  <div class="row" id="row">
+    <div class="col-lg-12">
+      <h1>Easy Vreco</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2">
+        <button id="ubication" class="btn btn-warning">Encuéntrame</button>
+      </div>
+      <div class="col-lg-2">
+        <select id="mode" class="form-control">
+          <option value="DRIVING">En automóvil</option>
+          <option value="WALKING">A pie</option>
+          <option value="TRANSIT">Transporte público</option>
+        </select>
+      </div>
+      <div class="col-lg-3">
+        <div class="input-group">
+          <input type="text" id="origin" class="form-control">
+          <span class="input-group-addon" id="remove-origin">
+            <i class="glyphicon glyphicon-remove"></i>
+          </span>
         </div>
       </div>
+      <div class="col-lg-3">
+        <div class="input-group">
+          <input type="text" id="destiny" class="form-control">
+          <span class="input-group-addon" id="remove-destiny">
+            <i class="glyphicon glyphicon-remove"></i>
+          </span>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <button class="btn btn-warning" id="btn-ruta">Ruta</button>
+      </div>
     </div>
-  </nav>
+  </div>
   <section>
-    <div class="row" >
-      <div class="col-lg-12" id="position">
-
-      </div>
-    </div>
     <div class="row" id="map">
-      <div class="col-lg-12">
-
-      </div>
+      <div class="col-lg-12"></div>
     </div>
   </section>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQWhMfqOzklrgzumzlkcD0r5GVv0pXDDA&callback=initMap&libraries=places" async defer
-  type="text/javascript"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQWhMfqOzklrgzumzlkcD0r5GVv0pXDDA&callback=initMap&libraries=places"
+    async defer type="text/javascript"></script>
   <link rel="stylesheet" href="node_modules/bootstrap3/dist/js/bootstrap.js">
   <script src="assets/js/app.js"></script>
 </body>

@@ -1,8 +1,23 @@
-/* section {
-    background: blue;
-    height: 93vh;
-} */
+.container{
+    box-sizing: border-box;
+    padding: 1em;
+}
 #map {
     height: 400px;
     width: 100%;
-   }
+}
+h1{
+    text-align: center
+}
+section{
+    box-sizing: border-box;
+    padding: 1em;
+}
+#map{
+    padding: 0;
+    margin: 0;
+}
+#row{
+    padding: 0;
+    margin: 0;
+}
