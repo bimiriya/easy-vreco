@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Easy Vreco</title>
-
   <link rel="stylesheet" href="node_modules/bootstrap3/dist/css/bootstrap.css">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body>
+    <canvas id="canvas-basic"></canvas>
   <div class="row" id="row">
     <div class="col-lg-12">
       <h1>Easy Vreco</h1>
@@ -19,10 +19,10 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-lg-2">
+      <div class="col-lg-2 col-xs-12">
         <button id="ubication" class="btn btn-warning">Encuéntrame</button>
       </div>
-      <div class="col-lg-2">
+      <div class="col-lg-2 col-xs-5">
         <select id="mode" class="form-control">
           <option value="DRIVING">En automóvil</option>
           <option value="WALKING">A pie</option>
@@ -30,7 +30,7 @@
           <option value="BICYCLING">En bicicleta</option>
         </select>
       </div>
-      <div class="col-lg-3">
+      <div class="col-lg-3 col-xs-12">
         <div class="input-group">
           <input type="text" id="origin" class="form-control">
           <span class="input-group-addon" id="remove-origin">
@@ -38,7 +38,7 @@
           </span>
         </div>
       </div>
-      <div class="col-lg-3">
+      <div class="col-lg-3 col-xs-12">
         <div class="input-group">
           <input type="text" id="destiny" class="form-control">
           <span class="input-group-addon" id="remove-destiny">
@@ -46,18 +46,19 @@
           </span>
         </div>
       </div>
-      <div class="col-lg-2">
+      <div class="col-lg-2 col-xs-12">
         <button class="btn btn-warning" id="btn-ruta">Ruta</button>
       </div>
     </div>
   </div>
   <section>
     <div class="row" id="map">
-      <div class="col-lg-12"></div>
+      <div class="col-lg-12 col-xs-12"></div>
     </div>
   </section>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQWhMfqOzklrgzumzlkcD0r5GVv0pXDDA&callback=initMap&libraries=places"
     async defer type="text/javascript"></script>
+    <script src="assets/granim.js-1.1.0/dist/granim.min.js"></script>
   <link rel="stylesheet" href="node_modules/bootstrap3/dist/js/bootstrap.js">
   <script src="assets/js/app.js"></script>
 </body>
