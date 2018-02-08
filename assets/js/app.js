@@ -2,7 +2,7 @@ var map;
 // INICIALIZAR MAPA
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 15,
+    zoom: 18,
     center: { lat: -33.4533624, lng: -70.7142131 }
   });
 
@@ -11,6 +11,7 @@ function initMap() {
 
 
   let infoWindow = new google.maps.InfoWindow({ map: map });
+  
   let autocompleteA = document.getElementById('origin');
   const searchA = new google.maps.places.Autocomplete(autocompleteA);
   searchA.bindTo('bounds', map);
@@ -36,15 +37,15 @@ function initMap() {
           position: pos,
           map: map,
         });
-        // let text = '<h1>Nombre del lugar</h1>' + '<p>Descripción del lugar</p>' + '<a href="#">Página web</a>';
-        // let information = new google.maps.InfoWindow({
-        //   content: text
-        // });
+        let text = '<h1>Nombre del lugar</h1>' + '<p>Descripción del lugar</p>' + '<a href="#">Página web</a>';
+        let information = new google.maps.InfoWindow({
+          content: text
+        });
 
-        // marker.addListener('click', function() {
-        //   information.open(mapa, marker);
-        // });
-      }, function () {
+        marker.addListener('click', function() {
+          information.open(map, marker);
+        });
+      }, function() {
         handleLocationError(true, infoWindow, map.getCenter());
       });
     } else {
@@ -71,7 +72,10 @@ function calculateAndDisplayRoute() {
     destination: document.getElementById('destiny').value,
     travelMode: google.maps.TravelMode[selectedMode],
   }
-
+  map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 18,
+    center: { lat: -33.4533624, lng: -70.7142131 }
+  });
 
   directionsService.route(objDR, function(response, status) {
     if (status === 'OK') {
